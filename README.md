@@ -70,6 +70,8 @@ What we just did in Step 3 was creating a bunch of very useful Spacelift resourc
 
 ![New stack](pics/10-new-stack-min.png)
 
+And yes, it's red. Yes, it's normally a bad sign. And yes, this is expected - one of the exercises here is to fix it.
+
 ### Environment
 
 Now where did _that_ come from? In fact, we had it declared it using Terraform, just [here](./stack.tf). The same file defines a bunch of things related to the environment, so let's click on the name of the new stack to be taken to its screen. Since it doesn't contain anything interesting just yet, let's quickly navigate to the _Environment_ screen. And it's indeed a very busy screen, so let's just look at the first section there:
@@ -110,11 +112,11 @@ All these policies are defined and explained in the [`policies.tf`](./policies.t
 
 - _Allow only safe commands_ is a [task policy](https://docs.spacelift.io/concepts/policy/task-run-policy) that only allows you to run certain commands as [tasks](https://docs.spacelift.io/concepts/task). This is another one that we're going to try hands-on;
 
-- _Trigger stacks that declare an explicit dependency_ is a [trigger policy](https://docs.spacelift.io/concepts/policy/trigger-policy) that will cause every stack that declares dependency to be triggered when the current one is updated - while this one is probably beyond the scope of the basic tutorial, we wanted to show you that Spacelift is Turing-complete 😜
+- _Trigger stacks that declare an explicit dependency_ is a [trigger policy](https://docs.spacelift.io/concepts/policy/trigger-policy) that will cause every stack that declares dependency to be triggered when the current one is updated - while this one is probably beyond the scope of the basic tutorial, we wanted to show you that Spacelift is Turing-complete. Also, a trigger policy is what triggered a failing run on the newly created stack 😜
 
 ### Policies in practice
 
-While it's worth mentioning that we're using an [open-source language](https://www.openpolicyagent.org/) for our policies, authoring policies is outside of the scope of this tutorial. Instead, we'd like to show you the power of policies hands-on. Let's then navigate to our new stack (_Managed stack_) and trigger a run. Oh no, what did just happen? Looks like what we're trying to does not agree with our policy:
+While it's worth mentioning that we're using an [open-source language](https://www.openpolicyagent.org/) for our policies, authoring policies is outside of the scope of this tutorial. Instead, we'd like to show you the power of policies hands-on. Let's then navigate to our new stack (_Managed stack_) and try to figure out why the run created by the trigger policy failed? Looks like what we're trying to does not agree with our policy:
 
 ![Plan policy failing a run](pics/15-failed-commit-min.png)
 

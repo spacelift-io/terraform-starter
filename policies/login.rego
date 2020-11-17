@@ -10,3 +10,8 @@ package spacelift
 admin { input.session.teams == "DevOps" }
 allow { input.session.member }
 deny  { not allow }
+
+# Learn more about sampling policy evaluations here:
+#
+# https://docs.spacelift.io/concepts/policy#sampling-policy-inputs
+sample { true }

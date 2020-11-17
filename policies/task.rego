@@ -13,3 +13,8 @@ allowlist := {
 
 allowed { allowlist[_] == input.request.command }
 deny["Only selected commands are allowed"] { not allowed }
+
+# Learn more about sampling policy evaluations here:
+#
+# https://docs.spacelift.io/concepts/policy#sampling-policy-inputs
+sample { true }

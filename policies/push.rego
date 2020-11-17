@@ -28,3 +28,8 @@ affected {
     startswith(filepath, input.stack.project_root)
     endswith(filepath, ".tf")
 }
+
+# Learn more about sampling policy evaluations here:
+#
+# https://docs.spacelift.io/concepts/policy#sampling-policy-inputs
+sample { true }

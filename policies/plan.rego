@@ -21,3 +21,8 @@ new_password[resource] {
     resource := created_resources[_]
     resource.type == "random_password"
 }
+
+# Learn more about sampling policy evaluations here:
+#
+# https://docs.spacelift.io/concepts/policy#sampling-policy-inputs
+sample { true }

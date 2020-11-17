@@ -1,3 +1,5 @@
+data "spacelift_current_stack" "this" {}
+
 resource "spacelift_stack" "managed" {
   name        = "Managed stack"
   description = "Your first stack managed by Terraform"
@@ -7,7 +9,7 @@ resource "spacelift_stack" "managed" {
   project_root = "managed-stack"
 
   autodeploy = true
-  labels     = ["managed"]
+  labels     = ["managed", "depends-on:${data.spacelift_current_stack.this.id}"]
 }
 
 # This is an environment variable defined on the stack level. Stack-level
