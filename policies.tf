@@ -7,7 +7,7 @@
 #
 # https://docs.spacelift.io/concepts/policy/stack-access-policy
 resource "spacelift_policy" "access" {
-  type = "STACK_ACCESS"
+  type = "ACCESS"
 
   name = "All of Engineering gets read access"
   body = file("${path.module}/policies/access.rego")
@@ -28,7 +28,7 @@ resource "spacelift_policy_attachment" "access" {
 #
 # https://docs.spacelift.io/concepts/policy/terraform-plan-policy
 resource "spacelift_policy" "plan" {
-  type = "TERRAFORM_PLAN"
+  type = "PLAN"
 
   name = "Enforce password strength"
   body = file("${path.module}/policies/plan.rego")
@@ -71,7 +71,7 @@ resource "spacelift_policy_attachment" "push" {
 #
 # https://docs.spacelift.io/concepts/policy/task-run-policy
 resource "spacelift_policy" "task" {
-  type = "TASK_RUN"
+  type = "TASK"
 
   name = "Allow only safe commands"
   body = file("${path.module}/policies/task.rego")
