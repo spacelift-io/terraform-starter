@@ -7,7 +7,7 @@ package spacelift
 #
 # https://docs.spacelift.io/concepts/policy/login-policy
 
-admin { input.session.teams == "DevOps" }
+admin { input.session.teams[_] == "DevOps" }
 allow { input.session.member }
 deny  { not allow }
 
