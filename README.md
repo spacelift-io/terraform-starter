@@ -1,4 +1,4 @@
-**NOTE**: Click the *Use this template* button in order to create your own repository based on this template.
+**NOTE**: Click the **Use this template** button in order to create your own repository based on this template.
 
 ---
 # So you want to take Spacelift for a spin?
