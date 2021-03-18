@@ -1,4 +1,4 @@
-**NOTE**: in GitHub, **forks are public**. If you're not comfortable with that, and want to create a private fork, the only option supported at the moment is to create a new private repo and add this repo as second remote. See [this thread](https://stackoverflow.com/questions/10065526/github-how-to-make-a-fork-of-public-repository-private) for the exact details.
+**NOTE**: Click the *Use this template* button in order to create your own repository based on this template.
 
 ---
 # So you want to take Spacelift for a spin?
