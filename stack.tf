@@ -4,6 +4,10 @@ resource "spacelift_stack" "managed" {
   name        = "Managed stack"
   description = "Your first stack managed by Terraform"
 
+  showcase {
+    namespace = "spacelift-io"
+  }
+  
   repository   = "terraform-starter"
   branch       = "main"
   project_root = "managed-stack"
