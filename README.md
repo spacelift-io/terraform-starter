@@ -153,7 +153,7 @@ Let's click on preview and see what gives under PRs tab for the managed stack:
 
 Now that the push policy is happy with the new length of your password, you can merge the Pull Request to the _main_ branch. A run will be created automatically in the _Runs_ tab of your _Managed stack_ which should apply the changes automatically (see the `autoapply` setting in [`stack.tf`](./stack.tf)):
 
-![Run from a merged PR](pics/21-merged-pull-request-min.png)
+![Run from a merged PR](pics/22-merged-pull-request-min.png)
 
 ## Congratulations! 👏🏻 
 
