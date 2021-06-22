@@ -31,17 +31,17 @@ So without further ado, let's go through the stack creation process step by step
 
 ![Integrating VCS](pics/03-integrate-vcs-min.png)
 
+### Configure Backend
+
+In the next step we will choose the backend to use with Spacelift. I am selecting Terraform with a recent version for this tutorial. Spacelift can work with remote state providers but it also provides its own state management - though beyond convenience there are no benefits to using it. We don't have an existing state to import, so we do the most convenient thing there is - continue the defaults:
+
+![Configuring backend](pics/04-configure-backend-min.png)
+
 ### Stack behavior
 
 In the next step you will define some things about this stack's behavior. Since this is meant to be a quick and snappy tutorial we won't go into the details, but you can read more about them [here](https://docs.spacelift.io/concepts/stack). For now the only tweak we need to do here is to mark the stack as [administrative](https://docs.spacelift.io/concepts/stack#administrative). Why? Because only administrative stacks can manage Spacelift resources and that's what we'll be creating as part of this lab.
 
-![Defining behavior](pics/04-define-behavior-min.png)
-
-### Managing state
-
-The next step is all about managing [Terraform state](https://www.terraform.io/docs/state/index.html). Spacelift can work with any remote state provider but it also provides its own state backend - though beyond convenience there are no benefits to using it. We don't have an existing state to import, so we do the most convenient thing there is - continue the defaults:
-
-![Configuring state](pics/05-configure-state-min.png)
+![Defining behavior](pics/05-define-behavior-min.png)
 
 ### Naming the stack
 
@@ -61,11 +61,11 @@ Let's add some color here. We can do that by clicking the _Trigger_ button in th
 
 ![Confirm or discard](pics/08-confirm-or-discard-min.png)
 
-You can always refer to the logs directly to see what's changing. In this case, we're creating 24 Spacelift resources, and they all look good. So let's confirm and see what happens next:
+You can always refer to the logs directly to see what's changing. In this case, we're creating 25 Spacelift resources, and they all look good. So let's confirm and see what happens next:
 
 ![Changes applied](pics/09-changes-applied-min.png)
 
-Wow, 6 seconds? That was quick! Let's go back to our main (Stacks) screen to see what we've just done.
+Wow, 10 seconds? That was quick! Let's go back to our main (Stacks) screen to see what we've just done, clicking on the Spacelift logo on top left will take you there.
 
 ## Step 4: Exploring created resources
 
@@ -77,7 +77,7 @@ And yes, it's red. Yes, it's normally a bad sign. And yes, this is expected - on
 
 ### Environment
 
-Now where did _that_ come from? In fact, we had it declared it using Terraform, just [here](./stack.tf). The same file defines a bunch of things related to the environment, so let's click on the name of the new stack to be taken to its screen. Since it doesn't contain anything interesting just yet, let's quickly navigate to the _Environment_ screen. And it's indeed a very busy screen, so let's just look at the first section there:
+Now where did _that_ come from? In fact, we had it declared using Terraform, just [here](./stack.tf). The same file defines a bunch of things related to the environment, so let's click on the name of the new stack to be taken to its screen. Since it doesn't contain anything interesting just yet, let's quickly navigate to the _Environment_ screen. And it's indeed a very busy screen, so let's just look at the first section there:
 
 ![Environment](pics/11-environment-min.png)
 
@@ -87,7 +87,7 @@ But before we move on to the context, click the _Edit_ button in the upper right
 
 ### Context
 
-[Contexts](https://docs.spacelift.io/concepts/context) are how Spacelift does configuration reuse. Rather than having to copy and paste a bunch of configuration variables, Spacelift allows you to encapsulate them as a package and [attach](https://docs.spacelift.io/concepts/context#attaching-and-detaching) them to as many stacks as you want. So if you navigate back to the main screen (hint: click on the logo, it normally works like that single button on your iPhone) and then go to the Contexts screen, that's what you're going to see:
+[Contexts](https://docs.spacelift.io/concepts/context) are how Spacelift does configuration reuse. Rather than having to copy and paste a bunch of configuration variables, Spacelift allows you to encapsulate them as a package and [attach](https://docs.spacelift.io/concepts/context#attaching-and-detaching) them to as many stacks as you want. So if you navigate back to the main screen (hint: click on the logo, it normally works like that single button on your iPhone) and then go to the Contexts screen selecting it from the hamburger menu next to your name, that's what you're going to see:
 
 ![Contexts](pics/12-contexts-min.png)
 
@@ -139,13 +139,17 @@ And here's the exact change we're making:
 
 ![Pull Request changes](pics/18-pull-request-changes-min.png)
 
-That little change causes two runs to be executed since this repo is now connected to two stacks - one that created manually and one that is managed programmatically. It's the latter stack we've made changes to, so you will see that there are no changes to the former but one resource would be created for the latter. Note that we report the same information in two ways - one (Atlantis-like) is a PR comment and the other one - [commit status checks](https://developer.github.com/v3/repos/statuses/). The good thing about the latter is GitHub allows you to block PR merges on failing commit status checks.
+That little change causes two runs to be executed since this repo is now connected to two stacks - one that created manually and one that is managed programmatically. It's the latter stack we've made changes to, so you will see that there are no changes to the former but one resource would be created for the latter. 
 
 ![Pull Request feedback](pics/19-pull-request-feedback-min.png)
 
-Clicking on the _Details_ link next to the commit status check takes you to the test run for the affected stack. Let's click on that and see what gives:
+Clicking on the _Details_ link next to the commit status check takes you to the test run for the affected stack. 
 
-![Test run](pics/20-test-run-min.png)
+![PR details](pics/20-pull-request-preview-min.png)
+
+Let's click on preview and see what gives under PRs tab for the managed stack:
+
+![PR details](pics/21-pull-request-run-min.png)
 
 Now that the push policy is happy with the new length of your password, you can merge the Pull Request to the _main_ branch. A run will be created automatically in the _Runs_ tab of your _Managed stack_ which should apply the changes automatically (see the `autoapply` setting in [`stack.tf`](./stack.tf)):
 
