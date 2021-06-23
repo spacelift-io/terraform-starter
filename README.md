@@ -55,6 +55,7 @@ Congrats, you have your first stack. It doesn't do much, but we'll change it in 
 
 Creating a stack takes you to a very sad looking screen:
 
+
 ![Trigger run](pics/07-trigger-run-min.png)
 
 Let's add some color here. We can do that by clicking the _Trigger_ button in the upper right hand corner of the screen. The trigger button will create a Spacelift job that will check out you code, run the usual Terraform commands on it and present you with the choice on whether you want to apply them or not:
