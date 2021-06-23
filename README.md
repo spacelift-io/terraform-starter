@@ -39,7 +39,7 @@ In the next step we will choose the backend to use with Spacelift. I am selectin
 
 ### Stack behavior
 
-In the next step you will define some things about this stack's behavior. Since this is meant to be a quick and snappy tutorial we won't go into the details, but you can read more about them [here](https://docs.spacelift.io/concepts/stack). For now the only tweak we need to do here is to mark the stack as [administrative](https://docs.spacelift.io/concepts/stack#administrative). Why? Because only administrative stacks can manage Spacelift resources and that's what we'll be creating as part of this lab.
+In the next step you will define some things about this stack's behavior. Since this is meant to be a quick and snappy tutorial we won't go into the details, but you can read more about them [here](https://docs.spacelift.io/concepts/stack). For now the only tweak we need to do here is to mark the stack as [administrative](https://docs.spacelift.io/concepts/stack/stack-settings#administrative). Why? Because only administrative stacks can manage Spacelift resources and that's what we'll be creating as part of this lab.
 
 ![Defining behavior](pics/05-define-behavior-min.png)
 
