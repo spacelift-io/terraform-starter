@@ -140,7 +140,7 @@ And here's the exact change we're making:
 
 ![Pull Request changes](pics/18-pull-request-changes-min.png)
 
-That little change causes two runs to be executed since this repo is now connected to two stacks - one that created manually and one that is managed programmatically. It's the latter stack we've made changes to, so you will see that there are no changes to the former but one resource would be created for the latter. 
+That little change causes two runs to be executed since this repo is now connected to two stacks - one that you created manually and one that is managed programmatically. It's the latter stack we've made changes to, so you will see that there are no changes to the former but one resource would be created for the latter. 
 
 ![Pull Request feedback](pics/19-pull-request-feedback-min.png)
 
