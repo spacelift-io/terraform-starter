@@ -148,7 +148,7 @@ Clicking on the _Details_ link next to the commit status check takes you to the 
 
 ![PR details](pics/20-pull-request-preview-min.png)
 
-Let's click on preview and see what gives under PRs tab for the managed stack:
+Let's click on _Preview_ and see what gives under PRs tab for the managed stack:
 
 ![PR details](pics/21-pull-request-run-min.png)
 
