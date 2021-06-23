@@ -66,7 +66,7 @@ You can always refer to the logs directly to see what's changing. In this case, 
 
 ![Changes applied](pics/09-changes-applied-min.png)
 
-Wow, 10 seconds? That was quick! Let's go back to our main (Stacks) screen to see what we've just done, clicking on the Spacelift logo on top left will take you there.
+Wow, 10 seconds? That was quick! Let's go back to our main (Stacks) screen to see what we've just done. Clicking on the Spacelift logo on the top left will take you there.
 
 ## Step 4: Exploring created resources
 
