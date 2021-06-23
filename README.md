@@ -88,7 +88,7 @@ But before we move on to the context, click the _Edit_ button in the upper right
 
 ### Context
 
-[Contexts](https://docs.spacelift.io/concepts/context) are how Spacelift does configuration reuse. Rather than having to copy and paste a bunch of configuration variables, Spacelift allows you to encapsulate them as a package and [attach](https://docs.spacelift.io/concepts/context#attaching-and-detaching) them to as many stacks as you want. So if you navigate back to the main screen (hint: click on the logo, it normally works like that single button on your iPhone) and then go to the Contexts screen selecting it from the hamburger menu next to your name, that's what you're going to see:
+[Contexts](https://docs.spacelift.io/concepts/context) are how Spacelift does configuration reuse. Rather than having to copy and paste a bunch of configuration variables, Spacelift allows you to encapsulate them as a package and [attach](https://docs.spacelift.io/concepts/context#attaching-and-detaching) them to as many stacks as you want. So if you navigate back to the main screen (hint: click on the logo, it normally works like that single button on your iPhone) and then go to the Contexts screen, selecting it from the hamburger menu next to your name, that's what you're going to see:
 
 ![Contexts](pics/12-contexts-min.png)
 
