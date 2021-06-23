@@ -78,7 +78,7 @@ And yes, it's red. Yes, it's normally a bad sign. And yes, this is expected - on
 
 ### Environment
 
-Now where did _that_ come from? In fact, we had it declared using Terraform, just [here](./stack.tf). The same file defines a bunch of things related to the environment, so let's click on the name of the new stack to be taken to its screen. Since it doesn't contain anything interesting just yet, let's quickly navigate to the _Environment_ screen. And it's indeed a very busy screen, so let's just look at the first section there:
+Now where did _that_ come from? In fact, we declared it using Terraform just [here](./stack.tf). The same file defines a bunch of things related to the environment, so let's click on the name of the new stack to be taken to its screen. Since it doesn't contain anything interesting just yet, let's quickly navigate to the _Environment_ screen. And it's indeed a very busy screen, so let's just look at the first section there:
 
 ![Environment](pics/11-environment-min.png)
 
