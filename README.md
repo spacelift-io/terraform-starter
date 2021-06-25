@@ -131,7 +131,17 @@ Hint: try running `ls`. Figuring out why it succeeds is an exercise left to the 
 
 ## Step 5: tests and pull requests
 
-In this step we'll try to fix the problem reported by the plan policy and while doing that we'll see how Spacelift deals with testing your changes and handling Pull Requests. So without further ado, let's make a change to our code to make the random password we're trying to create in this new stack just a little bit longer - let's say 24 characters. Let's also not merge that change to `main` but create a separate branch and open a Pull Request:
+In this step we'll try to fix the problem reported by the plan policy and while doing that we'll see how Spacelift deals with testing your changes and handling Pull Requests.
+
+In order for this to work, you will need to have a copy of this repository and remove the
+```
+showcase {
+  namespace = "spacelift-io"
+}
+```
+part in the stack.tf file on your main branch. Otherwise the "managed stack" is connected to this public repository, instead of your copy of it.
+
+So without further ado, let's make a change to our code to make the random password we're trying to create in this new stack just a little bit longer - let's say 24 characters. Let's also not merge that change to `main` but create a separate branch and open a Pull Request:
 
 ![Open Pull Request](pics/17-open-pull-request-min.png)
 
