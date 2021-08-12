@@ -8,6 +8,7 @@ package spacelift
 
 allowlist := {
     "ls",
+    "pwd",
     "terraform taint random_password.secret",
 }
 
