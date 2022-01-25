@@ -8,6 +8,7 @@ package spacelift
 
 allowlist := {
     "ls -la",
+    "terraform destroy -auto-approve",
     "terraform taint random_password.secret",
 }
 
