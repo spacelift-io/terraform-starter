@@ -7,7 +7,8 @@ package spacelift
 # https://docs.spacelift.io/concepts/policy/task-run-policy
 
 allowlist := {
-    "ls",
+    "ls -la",
+    "terraform destroy -auto-approve",
     "terraform taint random_password.secret",
 }
 
