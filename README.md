@@ -25,7 +25,8 @@ In this tutorial, you will not be using any cloud providers. You won't need any 
 ### GitHub was used as a sign-in option:
 
 1. [Install the Spacelift GitHub App](https://github.com/apps/spacelift-io/installations/new) if you not already installed it.
-2. At this point, it's up to you to decide whether to give Spacelift access to all your repositories or a defined subset
+2. At this point, it's up to you to decide whether to give Spacelift access to all your repositories or a defined subset.
+
 ![Installing Spacelift for all repositories](pics/01-installing-all-min.png)
 
 **Note**: don't agonize over this choice - you can always change it later.
