@@ -4,21 +4,41 @@ This repository is designed just for this purpose. Click the _Use this template_
 
 In this tutorial, you will not be using any cloud providers. You won't need any extra credentials. The only resources you will create are those managed by [Spacelift's own Terraform provider](https://github.com/spacelift-io/terraform-provider-spacelift/).
 
-## Step 1: Installing GitHub application
+## Step 1: Setup Your Spacelift Account
 
-Provisioning a Spacelift account is fully automated and only involves [installing the GitHub app](https://github.com/apps/spacelift-io/installations/new). At this point, it's up to you to decide whether to give Spacelift access to all your repositories...
+1. On the [Spacelift home page](https://www.spacelift.io/), click on the "Get Started" button.
 
+![Spacelift home page](pics/homepage.png)
+
+2. Sign Up with Google, GitLab or GitHub
+
+![Spacelift sign up page](pics/signup.png)
+
+3. You will be prompted to start a demo of the Spacelift platform. Feel free to do the demo, or you can skip it as well and follow this more in-depth guide.
+
+## Step 2: Connecting with GitHub
+
+> In this guide, we will be using GitHub to host our repositories. You can find more information about other supported VCS providers [here](https://docs.spacelift.io/integrations/source-control).
+
+> The flow for connecting GitHub as a VCS provider is slightly different when using GitHub to sign in compared to the other sign-in options (GitLab, Google). Follow the section that is applicable to you.
+
+### GitHub was used as a sign-in option:
+
+1. [Install the Spacelift GitHub App](https://github.com/apps/spacelift-io/installations/new) if you not already installed it.
+2. At this point, it's up to you to decide whether to give Spacelift access to all your repositories or a defined subset
 ![Installing Spacelift for all repositories](pics/01-installing-all-min.png)
-
-...or only select ones:
-
-![Installing Spacelift for selected repositories](pics/02-installing-selected-min.png)
 
 **Note**: don't agonize over this choice - you can always change it later.
 
-Installing the application takes you to your first Spacelift screen, where you can create your first stack.
+3. Installing the application takes you to your first Spacelift screen, where you can create your first stack.
 
-## Step 2: Creating your first stack
+### Google or GitLab was used as a sign-in option:
+
+1. After signing up, you should have arrived on the Spacelift console.
+2. Follow the guide for [setting up the GitHub integration](https://docs.spacelift.io/integrations/source-control/github#setting-up-the-integration).
+3. Make sure that you allow the Spacelift GitHub App installation access to the forked repository.
+
+## Step 3: Creating your first stack
 
 [Stacks](https://docs.spacelift.io/concepts/stack) are probably the most important concept in Spacelift. They connect your code and your infra, with some configuration in-between. To keep things short, a Spacelift stack maps directly to a single Terraform state file.
 
@@ -62,7 +82,7 @@ For now we won't care about [labels](https://docs.spacelift.io/concepts/stack#la
 
 Congratulations, you just created your first stack!
 
-## Step 3: Triggering a run
+## Step 4: Triggering a run
 
 Your new stack does not show any tracked runs (AKA deployments) yet. Let's trigger the first one.
 
@@ -79,7 +99,7 @@ You can always refer to the logs directly to see is planned to be changed. In th
 
 Wow, 10 seconds? That was quick! Let's go back to our stacks list to see what we've just done. Clicking on the Spacelift logo on the top left will take you there.
 
-## Step 4: Exploring created resources
+## Step 5: Exploring created resources
 
 What we just did in Step 3 was create a bunch of very useful Spacelift resources. Looking at the main screen, we can quickly notice two things - our _Terraform starter_ stack turned green (always a good sign!), and there's another Stack we haven't seen before, called _Managed stack_.
 
@@ -147,7 +167,7 @@ Don't worry for now about fixing it, we will do that in the next step. Instead, 
 
 Now, try running `ls -la`. This will succeed. The reason is that the `ls -la` command is authorized by the _Allow only safe commands_ policy while `terraform output` is not.
 
-## Step 5: Tests and pull requests
+## Step 6: Tests and pull requests
 
 In this step, we'll try to fix the problem reported by the plan policy, and while doing that, we'll see how Spacelift deals with testing your changes and handling Pull Requests.
 
