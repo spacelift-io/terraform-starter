@@ -122,7 +122,7 @@ But before we move on to the context, click the _Edit_ button in the upper right
 
 ### Context
 
-[Contexts](https://docs.spacelift.io/concepts/context) are how Spacelift does configuration reuse. Rather than having to copy and paste a bunch of configuration variables, Spacelift allows you to encapsulate them as a package and [attach](https://docs.spacelift.io/concepts/context#attaching-and-detaching) them to as many stacks as you want.
+[Contexts](https://docs.spacelift.io/concepts/configuration/context) are how Spacelift does configuration reuse. Rather than having to copy and paste a bunch of configuration variables, Spacelift allows you to encapsulate them as a package and [attach](https://docs.spacelift.io/concepts/configuration/context#attaching-and-detaching) them to as many stacks as you want.
 
 So if you navigate back to the main screen (hint: click on the logo) and then go to the Contexts screen, selecting it from the hamburger menu next to your name, that's what you're going to see.
 
@@ -150,7 +150,7 @@ All these policies are defined and explained in the [`policies.tf`](./policies.t
 
 - _Enforce password strength_ is a [plan policy](https://docs.spacelift.io/concepts/policy/terraform-plan-policy) that prevents you from creating weak passwords using [`random_password`](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) resource type - we'll see this one in action shortly;
 
-- _Allow only safe commands_ is a [task policy](https://docs.spacelift.io/concepts/policy/task-run-policy) that limits commands that can be run as [tasks](https://docs.spacelift.io/concepts/task). This is another one that we're going to try hands-on;
+- _Allow only safe commands_ is a [task policy](https://docs.spacelift.io/concepts/policy/task-run-policy) that limits commands that can be run as [tasks](https://docs.spacelift.io/concepts/run/task). This is another one that we're going to try hands-on;
 
 - _Trigger stacks that declare an explicit dependency_ is a [trigger policy](https://docs.spacelift.io/concepts/policy/trigger-policy) that will cause every stack that declares dependency to be triggered when the current one is updated - while this one is probably beyond the scope of the basic tutorial, we wanted to show you that Spacelift is [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness). Also, a trigger policy is what triggered a failing run on the newly created stack.
 
@@ -207,4 +207,4 @@ You're a Spacelift expert now! If you like what you've seen so far, here are som
 - [connect your Slack workspace](https://docs.spacelift.io/integrations/slack);
 - learn about our native [cloud integrations](https://docs.spacelift.io/integrations/cloud-providers);
 - set up [SSO for your organization](https://docs.spacelift.io/integrations/single-sign-on);
-- start a [Spacelift agent](https://docs.spacelift.io/concepts/private-worker-pools) in your own infrastructure (yes, it will run on your laptop, too).
+- start a [Spacelift agent](https://docs.spacelift.io/concepts/worker-pools) in your own infrastructure (yes, it will run on your laptop, too).
