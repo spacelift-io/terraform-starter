@@ -45,9 +45,17 @@ In this tutorial, you will not be using any cloud providers. You won't need any 
 
 So without further ado, let's click on the _Add stack_ button and go through the stack creation process step by step.
 
+### Naming the stack
+
+As they say, "_there are two hard problems in computer science: cache invalidation, naming things, and off-by-1 errors_". We'll make it easy this time: we've come up with a good name for your first stack, so feel free to copy it.
+
+For now we won't care about [labels](https://docs.spacelift.io/concepts/stack#labels) or description (yes, we support Markdown), though you can read up on them when you're done with this lab.
+
+![Naming stack](pics/06-name-stack-min.png)
+
 ### VCS integration
 
-First, we need to tell Spacelift where the project code lives - this is the _Integrate VCS_ step.
+Next, we need to tell Spacelift where the project code lives - this is the _Integrate VCS_ step.
 
 Make sure that the provider is _GitHub_, the repository is the one you just created, and lastly, the _main_ branch is selected. These should be the default values.
 
@@ -72,14 +80,6 @@ Since this is meant to be a quick and easy-to-follow tutorial, we won't go into 
 For now, the only tweak we need to do here is to mark the stack as [administrative](https://docs.spacelift.io/concepts/stack/stack-settings#administrative). Why? Because only administrative stacks can manage Spacelift resources, and that's what we'll be creating as part of this lab.
 
 ![Defining behavior](pics/05-define-behavior-min.png)
-
-### Naming the stack
-
-As they say, "_there are two hard problems in computer science: cache invalidation, naming things, and off-by-1 errors_". We'll make it easy this time: we've come up with a good name for your first stack, so feel free to copy it.
-
-For now we won't care about [labels](https://docs.spacelift.io/concepts/stack#labels) or description (yes, we support Markdown), though you can read up on them when you're done with this lab.
-
-![Naming stack](pics/06-name-stack-min.png)
 
 Congratulations, you just created your first stack!
 
