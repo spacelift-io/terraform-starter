@@ -113,8 +113,6 @@ All these policies are defined and explained in the [`policies.tf`](./policies.t
 
 - _Enforce password strength_ is a [plan policy](https://docs.spacelift.io/concepts/policy/terraform-plan-policy) that prevents you from creating weak passwords using [`random_password`](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) resource type - we'll see this one in action really soon;
 
-- _Allow only safe commands_ is a [task policy](https://docs.spacelift.io/concepts/policy/task-run-policy) that only allows you to run certain commands as [tasks](https://docs.spacelift.io/concepts/task). This is another one that we're going to try hands-on;
-
 - _Trigger stacks that declare an explicit dependency_ is a [trigger policy](https://docs.spacelift.io/concepts/policy/trigger-policy) that will cause every stack that declares dependency to be triggered when the current one is updated - while this one is probably beyond the scope of the basic tutorial, we wanted to show you that Spacelift is Turing-complete. Also, a trigger policy is what triggered a failing run on the newly created stack 😜
 
 ### Policies in practice
@@ -123,11 +121,7 @@ While it's worth mentioning that we're using an [open-source language](https://w
 
 ![Plan policy failing a run](pics/15-failed-commit-min.png)
 
-Don't worry for now about fixing it, we will do that in the next step. Instead, let's navigate to our new Stack's Tasks screen and try to run something. How about `terraform destroy -auto-approve`? Nope, didn't work either:
-
-![Task failed](pics/16-task-failed-min.png)
-
-Hint: try running `ls`. Figuring out why it succeeds is an exercise left to the reader.
+Don't worry for now about fixing it, we will do that in the next step.
 
 ## Step 5: tests and pull requests
 
