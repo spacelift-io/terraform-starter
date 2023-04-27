@@ -152,9 +152,7 @@ All these policies are defined and explained in the [`policies.tf`](./policies.t
 
 - _Enforce password strength_ is a [plan policy](https://docs.spacelift.io/concepts/policy/terraform-plan-policy) that prevents you from creating weak passwords using [`random_password`](https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/password) resource type - we'll see this one in action shortly;
 
-- _Allow only safe commands_ is a [task policy](https://docs.spacelift.io/concepts/policy/task-run-policy) that limits commands that can be run as [tasks](https://docs.spacelift.io/concepts/run/task). This is another one that we're going to try hands-on;
-
-- _Trigger stacks that declare an explicit dependency_ is a [trigger policy](https://docs.spacelift.io/concepts/policy/trigger-policy) that will cause every stack that declares dependency to be triggered when the current one is updated - while this one is probably beyond the scope of the basic tutorial, we wanted to show you that Spacelift is [Turing-complete](https://en.wikipedia.org/wiki/Turing_completeness). Also, a trigger policy is what triggered a failing run on the newly created stack.
+- _Trigger stacks that declare an explicit dependency_ is a [trigger policy](https://docs.spacelift.io/concepts/policy/trigger-policy) that will cause every stack that declares dependency to be triggered when the current one is updated - while this one is probably beyond the scope of the basic tutorial, we wanted to show you that Spacelift is Turing-complete. Also, a trigger policy is what triggered a failing run on the newly created stack 😜
 
 ### Policies in practice
 
@@ -164,11 +162,7 @@ Instead, we'd like to show you the power of policies hands-on. Let's navigate to
 
 ![Plan policy failing a run](pics/15-failed-commit-min.png)
 
-Don't worry for now about fixing it, we will do that in the next step. Instead, let's navigate to our new Stack's Tasks screen and try to run something. How about `terraform output`? Nope, it didn't work either.
-
-![Task failed](pics/16-task-failed-min.png)
-
-Now, try running `ls -la`. This will succeed. The reason is that the `ls -la` command is authorized by the _Allow only safe commands_ policy while `terraform output` is not.
+Don't worry for now about fixing it, we will do that in the next step.
 
 ## Step 6: Tests and pull requests
 
