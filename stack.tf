@@ -2,7 +2,7 @@ data "spacelift_current_stack" "this" {}
 
 resource "spacelift_stack" "managed" {
   name        = "Managed stack"
-  description = "Your first stack managed by Terraform"
+  description = "Your firstish stack managed by Terraform"
 
   repository   = "terraform-starter"
   branch       = "main"
