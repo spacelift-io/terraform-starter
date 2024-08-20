@@ -6,6 +6,8 @@
 # You can read more about access policies here:
 #
 # https://docs.spacelift.io/concepts/policy/stack-access-policy
+# Seems like SpaceLift.IO deprecated policies
+# https://docs.spacelift.io/concepts/policy/stack-access-policy
 resource "spacelift_policy" "access" {
   type = "ACCESS"
 
@@ -100,9 +102,12 @@ resource "spacelift_policy_attachment" "trigger-self" {
 # level and are not attached to individual stacks.
 #
 # You can read more about login policies here:
-#
+# 
 # https://docs.spacelift.io/concepts/policy/login-policy
 resource "spacelift_policy" "login" {
+  # Login policies are only evaluated for the Cloud or Enterprise plan.
+  
+
   type = "LOGIN"
 
   name = "DevOps are admins"
