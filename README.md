@@ -110,9 +110,9 @@ What we just did in Step 3 was create a bunch of very useful Spacelift resources
 
 It's red but don't worry, this is expected - one of the exercises here is to fix it.
 
-### Environment
-
 Now, where did _that_ come from? In fact, we declared it using Terraform just [here](./stack.tf). The same file defines many things related to the environment, so let's click on the name of the new stack to be taken to its screen.
+
+### Environment
 
 Since it doesn't contain anything interesting just yet, let's quickly navigate to the _Environment_ screen. It is a very busy screen, so let's focus on the first section.
 
@@ -144,9 +144,7 @@ When you navigate to the Policies screen, you will see that we've created six di
 
 All these policies are defined and explained in the [`policies.tf`](./policies.tf) file, but let's go through them one by one:
 
-- _DevOps are admins_ is a [login policy](https://docs.spacelift.io/concepts/policy/login-policy) that would make anyone who's a member of the _DevOps_ team in your GitHub organization log in as a Spacelift administrator as opposed to the default situation where only GitHub admin users are automatically Spacelift admins. Note: this changes if you're [using SSO](https://docs.spacelift.io/integrations/single-sign-on) instead of GitHub to authenticate;
-
-- _All of Engineering gets read access_ is an [access policy](https://docs.spacelift.io/concepts/policy/stack-access-policy) that gives any member of the _Engineering_ GitHub team read access to every stack it's attached to;
+- _Standard GitHub login policy_ is a [login policy](https://docs.spacelift.io/concepts/policy/login-policy) that would make anyone who's a member of the _DevOps_ team in your GitHub organization log in as a Spacelift administrator as opposed to the default situation where only GitHub admin users are automatically Spacelift admins. Note: this changes if you're [using SSO](https://docs.spacelift.io/integrations/single-sign-on) instead of GitHub to authenticate.  Additionally, it gives any member of the _Engineering_ GitHub team read access to every stack it's attached to;
 
 - _Ignore commits outside the project root_ is a [Git push policy](https://docs.spacelift.io/concepts/policy/git-push-policy) that ignores push notifications which do not affect any files outside of the project root of the stack it's attached to;
 
