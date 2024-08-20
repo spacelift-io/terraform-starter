@@ -23,7 +23,7 @@ space_read[space.id] {
 space_write[space.id] {
   space := input.spaces[_]
   space.labels[_] == "engineers-are-writers"
-  is_developer
+  is_engineer
 }
 
 # Assign admin role for the root space for anyone in the admin team
