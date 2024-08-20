@@ -1,3 +1,5 @@
+data "spacelift_account" "this" {}
+
 data "spacelift_space" "root" {
   space_id = "root"
 }
