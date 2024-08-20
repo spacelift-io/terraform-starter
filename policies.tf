@@ -87,6 +87,6 @@ resource "spacelift_policy_attachment" "trigger-self" {
 resource "spacelift_policy" "login" {
   type = "LOGIN"
 
-  name = "DevOps are admins"
+  name = "Standard GitHub login policy"
   body = file("${path.module}/policies/login.rego")
 }
