@@ -20,8 +20,15 @@ resource "spacelift_environment_variable" "context-plaintext" {
   }
 
   context_id = spacelift_context[each.key].id
-  name       = each.key
-  value      = each.value["env"]
-  write_only = false
+  dynamic "variable" {
+    for_each = each.value
+
+    content {
+      name       = variable.key
+      value      = variable.value
+      write_only = false
+    }
+  }
 }
+
 
