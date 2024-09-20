@@ -1,0 +1,10 @@
+name: aws-account:platform-stg-test
+description: Plaform Context for Staging AWS account
+labels: ["autoattach:env:stg-test"]
+variables:
+  env: stg
+  TF_VAR_env: stg
+  TF_VAR_aws_account_id: "692805717546"
+  TF_VAR_account_name: "prenuvo-dev"
+  TF_VAR_aws_account_name: "prenuvo-dev"
+  TF_VAR_aws_account: "692805717546"
