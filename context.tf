@@ -17,7 +17,7 @@ resource "spacelift_environment_variable" "context-plaintext" {
 
   for_each = { for idx, context in local.contexts_data : context.name => context.variables if context.variables != null }
 
-  context_id = spacelift_context.managed.id
+  context_id = spacelift_context[idx].managed.id
   name       = each.key
   value      = each.value
   write_only = false
