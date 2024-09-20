@@ -14,11 +14,14 @@ resource "spacelift_context" "managed" {
 }
 
 resource "spacelift_environment_variable" "context-plaintext" {
+  for_each = { 
+    for context in local.contexts_data : 
+    "${context.name}-${context.variables["env"]}" => context.variables 
+    if context.variables != null 
+  }
 
-  for_each = { for idx, context in local.contexts_data : context.name => context.variables if context.variables != null }
-
-  context_id = spacelift_context[idx].managed.id
-  name       = each.key
+  context_id = spacelift_context[each.key].managed.id
+  name       = each.value["name"]
   value      = each.value
   write_only = false
 }
