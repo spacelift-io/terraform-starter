@@ -32,9 +32,9 @@ locals {
 }
 
 resource "spacelift_context" "managed" {
-  for_each = { for i, context in local.context_data_list : i => context }
+  for_each = { for i, context in local.context_data_list : context.name => context }
 
-  name        = each.value.name
+  name        = each.key
   description = each.value.description
   labels      = each.value.labels
 }
