@@ -1,6 +1,6 @@
 name: aws-account:platform-dev-test
 description: Plaform Context for Development AWS account
-labels: autoattach:env:dev-test,test2
+labels: ["autoattach:env:dev-test","test2"]
 variables:
   env: dev
   TF_VAR_env: dev
