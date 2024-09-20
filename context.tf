@@ -16,9 +16,3 @@ resource "spacelift_environment_variable" "context-plaintext" {
   value      = each.value
   write_only = false
 }
-
-resource "spacelift_context_attachment" "managed" {
-  context_id = spacelift_context.managed.id
-  stack_id   = spacelift_stack.root_admin_stack.id
-  priority   = 0
-}
