@@ -1,16 +1,16 @@
-data "yaml_file" "contexts" {
-
-  for_each = fileset("${path.module}/contexts", "*.yaml")
-
-  filename = each.value
+locals {
+  contexts_data = [
+    for file in fileset("${path.module}/contexts", "*.yaml") :
+    yamldecode(file("${path.module}/contexts/${file}"))
+  ]
 }
 resource "spacelift_context" "managed" {
 
-  count = length(data.yaml_file.contexts)
+  count = length(local.contexts_data)
 
-  name        = data.yaml_file.instances[count.index].content["name"]
-  description = data.yaml_file.instances[count.index].content["description"]
-  labels      = data.yaml_file.instances[count.index].content["labels"]
+  name        = local.contexts_data[count.index].content["name"]
+  description = local.contexts_data[count.index].content["description"]
+  labels      = local.contexts_data[count.index].content["labels"]
 }
 
 # resource "spacelift_environment_variable" "context-plaintext" {
