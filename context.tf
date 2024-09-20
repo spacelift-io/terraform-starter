@@ -4,6 +4,7 @@ locals {
 resource "spacelift_context" "managed" {
   name        = local.context_data.name
   description = local.context_data.description
+  labels      = local.context_data.labels
 }
 
 resource "spacelift_environment_variable" "context-plaintext" {
