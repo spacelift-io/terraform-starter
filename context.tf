@@ -19,7 +19,7 @@ resource "spacelift_environment_variable" "context-plaintext" {
     if context.variables != null
   }
 
-  context_id = spacelift_context[each.key].id
+  context_id = spacelift_context.managed[each.key].id
   dynamic "variable" {
     for_each = each.value
 
