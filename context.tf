@@ -8,9 +8,9 @@ resource "spacelift_context" "managed" {
 
   count = length(local.contexts_data)
 
-  name        = local.contexts_data[count.index].content["name"]
-  description = local.contexts_data[count.index].content["description"]
-  labels      = local.contexts_data[count.index].content["labels"]
+  name        = local.contexts_data[count.index]["name"]
+  description = local.contexts_data[count.index]["description"]
+  labels      = local.contexts_data[count.index]["labels"]
 }
 
 # resource "spacelift_environment_variable" "context-plaintext" {
