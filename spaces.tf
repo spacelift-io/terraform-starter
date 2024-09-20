@@ -5,7 +5,7 @@
 resource "spacelift_space" "networking_hub" {
   name = "networking-hub"
 
-  parent_space_id = spacelift_space.aws.id
+  parent_space_id = "aws"
   description     = "Networking Hub Space"
   labels          = ["aws-networking-hub"]
 
