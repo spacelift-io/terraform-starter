@@ -1,0 +1,7 @@
+name: aws:services:dev:eus1:igw:persistent
+description: Plaform Context for Development AWS account
+labels: ["autoattach:aws:services:dev:eus1:igw:persistent"]
+variables:
+  TF_VAR_application: "igw-db"
+  TF_VAR_region: "eus1"
+  TF_VAR_secret_description: "Database superuser, fct_dbuser, database connection values"

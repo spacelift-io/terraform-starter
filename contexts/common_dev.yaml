@@ -1,0 +1,4 @@
+TF_VAR_region: "cac1"
+TF_VAR_env: "dev"
+TF_VAR_service: "prenuvo.dev"
+TF_VAR_provider_region: "ca-central-1"

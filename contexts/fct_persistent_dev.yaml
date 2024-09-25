@@ -1,0 +1,28 @@
+name: aws:services:dev:cac1:fct:persistent
+description: Plaform Context for Development AWS account
+labels: ["autoattach:aws:services:dev:cac1:fct:persistent"]
+variables:
+  TF_VAR_application: "fct-backend"
+  TF_VAR_secret_description: "Database superuser, fct_dbuser, database connection values"
+  TF_VAR_snapshot_identifier: "arn:aws:rds:ca-central-1:692805717546:cluster-snapshot:rds:prenuvo-dev-fct-db-0-2024-09-25-02-08"
+  TF_VAR_engine: "aurora-postgresql"
+  TF_VAR_engine_version: "16.1"
+  TF_VAR_instance_class: "db.t4g.medium"
+  TF_VAR_master_username: "dbadmin"
+  TF_VAR_master_password: "FwL1k8dku5FcEV1u"
+  TF_VAR_backup_retention_period: 1
+  TF_VAR_backup_window: "02:00-03:00"
+  TF_VAR_minor_version_upgrade: true
+  TF_VAR_subnet1: "subnet-010360d6333a850ac"
+  TF_VAR_subnet2: "subnet-0a4d284936dd0347d"
+  TF_VAR_vpc_id: "vpc-0de26e2b22b3613cb"
+  TF_VAR_ingress_from_port: 5432
+  TF_VAR_ingress_to_port: 5432
+  TF_VAR_ingress_protocol: "tcp"
+  TF_VAR_spoke_vpc_cidr: "10.55.0.0/20"
+  TF_VAR_egress_from_port: 0
+  TF_VAR_egress_to_port: 0
+  TF_VAR_egress_protocol: "-1"
+  TF_VAR_egress_spoke_vpc_cidr: "0.0.0.0/0"
+  TF_VAR_final_snapshot_identifier: "find-capture-tool-dev-cac1-9-24-2024"
+  TF_VAR_engine_family: "POSTGRESQL"
