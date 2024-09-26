@@ -1,6 +1,6 @@
-name: aws:services:dev:cac1:ds:network
-description: Plaform Context for document store service in dev aws account
-labels: ["autoattach:aws:services:dev:cac1:ds:network"]
+name: aws:services:dev:cac1:fct:network
+description: Plaform Context for find capture tool service in dev aws account
+labels: ["autoattach:aws:services:dev:cac1:fct:network"]
 variables:
   TF_VAR_spoke_vpc_cidr: "10.57.0.0/20"
   TF_VAR_spoke_private_subnet_cidr_1: "10.57.1.0/24"

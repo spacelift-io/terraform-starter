@@ -1,5 +1,5 @@
 name: aws:services:dev:cac1:cud:service
-description: Plaform Context for Development AWS account
+description: Plaform Context for customer user dashboard service in dev aws account
 labels: ["autoattach:aws:services:dev:cac1:cud:service"]
 variables:
   TF_VAR_min_ttl: 0

@@ -1,5 +1,5 @@
 name: aws:services:dev:cac1:hpd:service
-description: Plaform Context for Development AWS account
+description: Plaform Context for health practitioner directory service in dev aws account
 labels: ["autoattach:aws:services:dev:cac1:hpd:service"]
 variables:
   TF_VAR_min_ttl: 0

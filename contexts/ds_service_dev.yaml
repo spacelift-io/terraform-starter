@@ -1,5 +1,5 @@
 name: aws:services:dev:cac1:ds:service
-description: Plaform Context for Development AWS account
+description: Plaform Context for document store service in dev aws account
 labels: ["autoattach:aws:services:dev:cac1:ds:service"]
 variables:
   TF_VAR_application: "document-store"
