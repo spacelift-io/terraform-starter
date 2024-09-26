@@ -1,0 +1,35 @@
+name: aws:services:dev:eus1:igw:service
+description: Plaform Context for imaging gateway service in dev aws account
+labels: ["autoattach:aws:services:dev:eus1:igw:service"]
+variables:
+  TF_VAR_application: "imaging-gateway"
+  TF_VAR_lambda_region: "us-east-1"
+  TF_VAR_key: "helloworld.zip"
+  TF_VAR_stage_name: "dev"
+  TF_VAR_provider_region: "us-east-1"
+  TF_VAR_vpc_id: "#"
+  TF_VAR_subnets: '["#","#"]'
+  TF_VAR_desired_count: 4
+  TF_VAR_container_image: "public.ecr.aws/nginx/nginx:1.25-bookworm"
+  TF_VAR_container_cpu: 256
+  TF_VAR_container_memory: 512
+  TF_VAR_container_port: 80
+  TF_VAR_load_balancer_type: "application"
+  TF_VAR_enable_deletion_protection: false
+  TF_VAR_enable_cross_zone_load_balancing: true
+  TF_VAR_target_group_port: 80
+  TF_VAR_target_group_protocol: "HTTP"
+  TF_VAR_health_check_path: "/"
+  TF_VAR_health_check_interval: 30
+  TF_VAR_health_check_timeout: 5
+  TF_VAR_health_check_healthy_threshold: 2
+  TF_VAR_health_check_unhealthy_threshold: 2
+  TF_VAR_certificate_arn: "arn:aws:acm:us-east-1:692805717546:certificate/33de70d0-1c55-462f-89fb-2a060c239a76"
+  TF_VAR_execution_role_arn: ""
+  TF_VAR_task_role_arn: ""
+  TF_VAR_network_mode: "awsvpc"
+  TF_VAR_requires_compatibilities: '["FARGATE"]'
+  TF_VAR_task_cpu: 256
+  TF_VAR_task_memory: 512
+  TF_VAR_assign_public_ip: true
+  TF_VAR_internal: true
