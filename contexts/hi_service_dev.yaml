@@ -3,10 +3,10 @@ description: Plaform Context for health information service in dev aws account
 labels: ["autoattach:aws:services:dev:cac1:hi:service"]
 variables:
   TF_VAR_provider_region: "ca-central-1"
-  TF_VAR_vpc_id: "vpc-0dbedc452ac60c6a1"
-  TF_VAR_subnets: '["subnet-01736568e4dc52c43","subnet-016740bb7a402e952"]'
-  TF_VAR_desired_count: 1
-  TF_VAR_application: "hi"
+  # TF_VAR_vpc_id: "vpc-0dbedc452ac60c6a1"
+  # TF_VAR_subnets: '["subnet-01736568e4dc52c43","subnet-016740bb7a402e952"]'
+  # TF_VAR_desired_count: 1
+  # TF_VAR_application: "hi"
   # TF_VAR_container_image: "692805717546.dkr.ecr.ca-central-1.amazonaws.com/hi-dev-cac1-ecr:latest"
   # TF_VAR_container_cpu: 256
   # TF_VAR_container_memory: 512
