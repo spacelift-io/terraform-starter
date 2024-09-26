@@ -1,0 +1,30 @@
+name: aws:services:dev:cac1:hi:service
+description: Plaform Context for health information service in dev aws account
+labels: ["autoattach:aws:services:dev:cac1:hi:service"]
+variables:
+  TF_VAR_provider_region: "ca-central-1"
+  TF_VAR_vpc_id: "vpc-0dbedc452ac60c6a1"
+  TF_VAR_subnets: '["subnet-01736568e4dc52c43","subnet-016740bb7a402e952"]'
+  TF_VAR_desired_count: 1
+  TF_VAR_application: "hi"
+  TF_VAR_container_image: "692805717546.dkr.ecr.ca-central-1.amazonaws.com/hi-dev-cac1-ecr:latest"
+  TF_VAR_container_cpu: 256
+  TF_VAR_container_memory: 512
+  TF_VAR_container_port: 80
+  TF_VAR_load_balancer_type: "application"
+  TF_VAR_enable_deletion_protection: false
+  TF_VAR_enable_cross_zone_load_balancing: true
+  TF_VAR_target_group_port: 80
+  TF_VAR_target_group_protocol: "HTTP"
+  TF_VAR_health_check_path: "/"
+  TF_VAR_health_check_interval: 30
+  TF_VAR_health_check_timeout: 5
+  TF_VAR_health_check_healthy_threshold: 2
+  TF_VAR_health_check_unhealthy_threshold: 2
+  TF_VAR_certificate_arn: "arn:aws:acm:ca-central-1:692805717546:certificate/6d876f9a-ca5f-4255-b025-a47f6ac34098"
+  TF_VAR_network_mode: "awsvpc"
+  TF_VAR_requires_compatibilities: '["FARGATE"]'
+  TF_VAR_task_cpu: 256
+  TF_VAR_task_memory: 512
+  TF_VAR_assign_public_ip: true
+  TF_VAR_internal: true
