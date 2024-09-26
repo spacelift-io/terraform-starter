@@ -1,5 +1,5 @@
 name: aws:services:dev:cac1:fe:service
-description: Plaform Context for Development AWS account
+description: Plaform Context for frontend service in dev aws account
 labels: ["autoattach:aws:services:dev:cac1:fe:service"]
 variables:
   TF_VAR_min_ttl: 0
