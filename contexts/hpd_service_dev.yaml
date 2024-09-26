@@ -1,0 +1,30 @@
+name: aws:services:dev:cac1:hpd:service
+description: Plaform Context for Development AWS account
+labels: ["autoattach:aws:services:dev:cac1:hpd:service"]
+variables:
+  TF_VAR_min_ttl: 0
+  TF_VAR_default_ttl: 86400
+  TF_VAR_max_ttl: 31536000
+  TF_VAR_price_class: "PriceClass_100"
+  TF_VAR_acm_certificate_arn: "arn:aws:acm:us-east-1:692805717546:certificate/e4936b07-aa5c-45c5-9143-fe719163ac2c"
+  TF_VAR_ssl_support_method: "sni-only"
+  TF_VAR_minimum_protocol_version: "TLSv1"
+  TF_VAR_application: "health-practitioners-directory"
+  TF_VAR_functionality: "webapp"
+  TF_VAR_sse_algorithm: "AES256"
+  TF_VAR_versioning_status: "Enabled"
+  TF_VAR_resource: "hpd"
+  TF_VAR_lambda_region: "ca-central-1"
+  TF_VAR_org: "prenuvo"
+  TF_VAR_lambda_timeout: 10
+  TF_VAR_lambda_runtime: "python3.8"
+  TF_VAR_lambda_memory: 512
+  TF_VAR_key: "helloworld.zip"
+  TF_VAR_bucket_name: "lambdasourcecode-dev-cac1-s3"
+  TF_VAR_authorizer_type: "REQUEST"
+  TF_VAR_stage_name: "dev"
+  TF_VAR_auth_application: "health-practitioners-directory"
+  TF_VAR_auth_lambda_timeout: 10
+  TF_VAR_auth_lambda_memory: 256
+  TF_VAR_auth_key: "helloworld.zip"
+  TF_VAR_auth_lambda_runtime: "python3.8"
