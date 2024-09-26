@@ -1,0 +1,8 @@
+name: aws:service:dev:common
+description: Common Context for Development Environment
+labels: ["autoattach:aws:service:dev:common"]
+variables:
+  TF_VAR_region: "cac1"
+  TF_VAR_env: "dev"
+  TF_VAR_service: "prenuvo.dev"
+  TF_VAR_provider_region: "ca-central-1"
