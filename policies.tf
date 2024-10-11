@@ -1,24 +1,3 @@
-# ACCESS POLICY
-#
-# This example access policy gives everyone in the "Engineering" GitHub team
-# read access to the stack.
-#
-# You can read more about access policies here:
-#
-# https://docs.spacelift.io/concepts/policy/stack-access-policy
-resource "spacelift_policy" "access" {
-  type = "ACCESS"
-
-  name = "All of Engineering gets read access"
-  body = file("${path.module}/policies/access.rego")
-}
-
-# Access policies only take effect when attached to the stack.
-resource "spacelift_policy_attachment" "access" {
-  policy_id = spacelift_policy.access.id
-  stack_id  = spacelift_stack.managed.id
-}
-
 # PLAN POLICY
 #
 # This example plan policy prevents you from creating weak passwords, and warns 

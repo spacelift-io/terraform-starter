@@ -1,5 +1,9 @@
 data "spacelift_current_stack" "this" {}
 
+locals {
+  github_app_namespace = null
+}
+
 resource "spacelift_stack" "managed" {
   name        = "Managed stack"
   description = "Your first stack managed by Terraform"
@@ -10,6 +14,14 @@ resource "spacelift_stack" "managed" {
 
   autodeploy = true
   labels     = ["managed", "depends-on:${data.spacelift_current_stack.this.id}"]
+
+  dynamic "github_enterprise" {
+    for_each = local.github_app_namespace != null ? [1] : []
+    content {
+      namespace = local.github_app_namespace
+    }
+  }
+
 }
 
 # This is an environment variable defined on the stack level. Stack-level
