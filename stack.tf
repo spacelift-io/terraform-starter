@@ -10,6 +10,14 @@ resource "spacelift_stack" "managed" {
 
   autodeploy = true
   labels     = ["managed", "depends-on:${data.spacelift_current_stack.this.id}"]
+
+  dynamic "github_enterprise" {
+    for_each = var.github_app_namespace != null ? [1] : []
+    content {
+      namespace = var.github_app_namespace
+    }
+  }
+
 }
 
 # This is an environment variable defined on the stack level. Stack-level
