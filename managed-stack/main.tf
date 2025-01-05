@@ -1,6 +1,13 @@
-# This resource here is to show you how plan policies work.
+variable "spacelift_stack_id" {
+  type = string
+}
 
-resource "random_password" "secret" {
-  length  = 8
-  special = true
+module "main" {
+  source = "./components/main"
+
+  env = "${var.spacelift_stack_id}-app"
+}
+
+output "env" {
+  value = module.main.env
 }
