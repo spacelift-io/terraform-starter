@@ -11,13 +11,6 @@ resource "spacelift_stack" "managed" {
   autodeploy = true
   labels     = ["managed", "depends-on:${data.spacelift_current_stack.this.id}"]
 
-  dynamic "github_enterprise" {
-    for_each = var.github_app_namespace != null ? [1] : []
-    content {
-      namespace = var.github_app_namespace
-    }
-  }
-
 }
 
 # This is an environment variable defined on the stack level. Stack-level
@@ -65,7 +58,7 @@ data "spacelift_ips" "ips" {}
 # Note how we explicitly set the "write_only" bit for this file to "false".
 # Thanks to that, you can download the file from the Spacelift GUI.
 #
-# You can read more about mounted files here: 
+# You can read more about mounted files here:
 #
 # https://docs.spacelift.io/concepts/environment#mounted-files
 resource "spacelift_mounted_file" "stack-plaintext-file" {
@@ -82,4 +75,14 @@ resource "spacelift_mounted_file" "stack-secret-file" {
   stack_id      = spacelift_stack.managed.id
   relative_path = "stack-secret-password.json"
   content       = base64encode(jsonencode({ password = random_password.stack-password.result }))
+}
+
+
+data "spacelift_stack" "demo" {
+  stack_id = "demo"
+}
+
+# Output entire spacelift object
+output "stack_name" {
+  value = data.spacelift_stack.demo
 }
