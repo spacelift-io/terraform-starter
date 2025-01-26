@@ -1,9 +1,9 @@
 {
     "id": "Azure-Storage-Public-1234",
-    "queryName": "Storage Account Not Forcing HTTPS",
+    "queryName": "Storage Account Not Public",
     "severity": "HIGH",
     "category": "Encryption",
-    "descriptionText": "Storage Accounts should enforce the use of HTTPS.",
+    "descriptionText": "Storage Accounts should not be public.",
     "descriptionUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account#enable_https_traffic_only",
     "platform": "Terraform",
     "descriptionID": "Azure-Storage-Public-1234-ID",
