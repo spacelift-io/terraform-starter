@@ -1,9 +1,10 @@
-{
+  {
     "id": "Azure-Storage-Public-1234",
-    "queryName": "Azure Storage Container Publicly Accessible",
+    "queryName": "Azure Storage Account Allows Nested Items to Be Public",
     "severity": "HIGH",
     "category": "Access Control",
-    "descriptionText": "Azure storage containers should not have public access enabled to prevent unauthorized data exposure.",
-    "descriptionUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container#public_access",
+    "descriptionText": "Azure storage accounts should not allow nested items to be public to prevent unauthorized data exposure.",
+    "descriptionUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_account#allow_nested_items_to_be_public",
     "platform": "Terraform"
   }
+  

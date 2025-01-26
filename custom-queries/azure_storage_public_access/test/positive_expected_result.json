@@ -1,8 +1,8 @@
 [
-    {
-      "queryName": "Azure Storage Container Publicly Accessible",
-      "severity": "HIGH",
-      "line": 1,
-      "fileName": "positive.tf"
-    }
-  ]
+  {
+    "queryName": "Azure Storage Account Allows Nested Items to Be Public",
+    "severity": "HIGH",
+    "line": 1,
+    "fileName": "positive.tf"
+  }
+]
