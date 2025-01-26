@@ -24,3 +24,33 @@ resource "aws_security_group" "example" {
     cidr_blocks = ["0.0.0.0/0"] # Insecure: Allows all outbound traffic
   }
 }
+
+variable "db_password" {
+  default = "supersecretpassword" # Misconfiguration: Hardcoded sensitive value
+  type    = string
+}
+
+output "sensitive_output" {
+  value       = var.db_password
+  description = "Outputs the database password" # Misconfiguration: Sensitive value exposed in outputs
+}
+
+module "vulnerable_module" {
+  source  = "./module"
+  version = "0.1.0" # Misconfiguration: Versioning might not match the intended module state
+}
+
+resource "random_string" "example" {
+  length  = 8
+  special = true
+}
+
+# Sensitive file inclusion
+data "local_file" "private_key" {
+  filename = "id_rsa" # Misconfiguration: Private key inclusion
+}
+
+locals {
+  # Insecure use of locals
+  insecure_local_value = "not-secure-value" # Sensitive information should not be stored in locals
+}
