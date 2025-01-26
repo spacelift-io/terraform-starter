@@ -5,12 +5,22 @@ resource "random_password" "secret" {
   special = true
 }
 
-resource "azurerm_storage_account" "public" {
-  name                     = "publicstorageaccount"
-  resource_group_name      = "example-resources"
-  location                 = "West Europe"
-  account_tier             = "Standard"
-  account_replication_type = "LRS"
+resource "aws_security_group" "example" {
+  name        = "vulnerable-sg"
+  description = "Allow all traffic"
+  vpc_id      = "vpc-12345678"
 
-  allow_nested_items_to_be_public = true
+  ingress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Insecure: Allows all inbound traffic
+  }
+
+  egress {
+    from_port   = 0
+    to_port     = 65535
+    protocol    = "-1"
+    cidr_blocks = ["0.0.0.0/0"] # Insecure: Allows all outbound traffic
+  }
 }
