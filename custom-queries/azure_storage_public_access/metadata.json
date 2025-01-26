@@ -1,0 +1,9 @@
+{
+    "id": "Azure-Storage-Public-1234",
+    "queryName": "Azure Storage Container Publicly Accessible",
+    "severity": "HIGH",
+    "category": "Access Control",
+    "descriptionText": "Azure storage containers should not have public access enabled to prevent unauthorized data exposure.",
+    "descriptionUrl": "https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/storage_container#public_access",
+    "platform": "Terraform"
+  }
