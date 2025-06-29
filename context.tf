@@ -9,10 +9,10 @@ resource "spacelift_context" "managed" {
   description = "Your first context managed by Terraform"
 }
 
-# This is an envioronment variable defined on the context level. When the
+# This is an environment variable defined on the context level. When the
 # context is attached to the stack, this variable will be added to the stack's
 # own environment. And that's how we do configuration reuse here at Spacelift.
-# This evironment variable has its write_only bit explicitly set to false, which
+# This environment variable has its write_only bit explicitly set to false, which
 # means that you'll be able to read back its valie from both the GUI and the API.
 #
 # You can read more about environment variables here:
@@ -25,7 +25,7 @@ resource "spacelift_environment_variable" "context-plaintext" {
   write_only = false
 }
 
-# For another (secret) variable, let's create programmatically create a super
+# For another (secret) variable, let's programmatically create a super
 # secret password.
 resource "random_password" "context-password" {
   length  = 32
@@ -48,7 +48,7 @@ resource "spacelift_environment_variable" "context-writeonly" {
 
 # Apart from setting environment variables in your Contexts, you can add files
 # to be mounted directly in Spacelift's workspace. For the purpose of this
-# experiment, let's export our environemnt variables as JSON-encoded files, too.
+# experiment, let's export our environment variables as JSON-encoded files, too.
 # 
 # You can read more about mounted files here: 
 #
@@ -63,7 +63,7 @@ resource "spacelift_mounted_file" "context-plaintext-file" {
 }
 
 # Since you can't read back the value from a write-only environment variable
-# like we just did that for the read-write one, we'll need to retrieve the value
+# like we just did for the read-write one, we'll need to retrieve the value
 # of the password directly from its resource.
 resource "spacelift_mounted_file" "context-secret-file" {
   context_id    = spacelift_context.managed.id
