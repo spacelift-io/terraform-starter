@@ -1,7 +1,7 @@
 data "spacelift_current_stack" "this" {}
 
 resource "spacelift_stack" "managed" {
-  name        = "Managed stack"
+  name        = "managed-slack-reslug"
   description = "Your first stack managed by Terraform"
 
   repository   = "terraform-starter"
